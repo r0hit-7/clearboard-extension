@@ -1,0 +1,336 @@
+/* ClearBoard – Sidebar Styles */
+
+/* ── Toggle Button ─────────────────────────── */
+#clearboard-toggle {
+  position: fixed;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #ff0000;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+  transition: background 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#clearboard-toggle:hover {
+  background: #cc0000;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* ── Main Panel ────────────────────────────── */
+#clearboard-panel {
+  position: fixed;
+  right: -340px;
+  top: 0;
+  width: 320px;
+  height: 100vh;
+  z-index: 9998;
+  background: #0f0f0f;
+  border-left: 1px solid #2a2a2a;
+  box-shadow: -4px 0 24px rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 13px;
+  color: #e0e0e0;
+  transition: right 0.3s cubic-bezier(0.4,0,0.2,1);
+  overflow: hidden;
+}
+
+#clearboard-panel.cb-visible {
+  right: 0;
+}
+
+/* ── Header ────────────────────────────────── */
+#cb-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: #1a1a1a;
+  border-bottom: 1px solid #2a2a2a;
+  flex-shrink: 0;
+}
+
+#cb-logo {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.3px;
+}
+
+#cb-close {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+#cb-close:hover { background: #333; color: #fff; }
+
+/* ── Body (scrollable) ─────────────────────── */
+#cb-body {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0;
+  scrollbar-width: thin;
+  scrollbar-color: #333 transparent;
+}
+
+#cb-body::-webkit-scrollbar { width: 4px; }
+#cb-body::-webkit-scrollbar-thumb { background: #444; border-radius: 2px; }
+
+/* ── Sections ──────────────────────────────── */
+.cb-section {
+  padding: 14px 16px;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.cb-section-sm { padding: 8px 16px; }
+
+.cb-section-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 10px;
+}
+
+.cb-badge {
+  background: #2a2a2a;
+  color: #888;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 400;
+  text-transform: lowercase;
+  letter-spacing: 0;
+  margin-left: 4px;
+}
+
+.cb-hint {
+  font-size: 11px;
+  color: #777;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+/* ── Reference Row ─────────────────────────── */
+#cb-ref-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+#cb-ref-preview {
+  width: 80px;
+  height: 50px;
+  border-radius: 6px;
+  background: #1a1a2e;
+  border: 1px solid #333;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+#cb-ref-info {
+  flex: 1;
+}
+
+#cb-ref-status {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+/* ── Buttons ───────────────────────────────── */
+.cb-btn-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.cb-btn-row-main {
+  margin-bottom: 8px;
+}
+
+.cb-btn {
+  background: #272727;
+  border: 1px solid #383838;
+  color: #ccc;
+  padding: 6px 12px;
+  border-radius: 18px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+.cb-btn:hover:not(:disabled) { background: #333; border-color: #555; color: #fff; }
+.cb-btn:disabled { opacity: 0.4; cursor: default; }
+
+.cb-btn-primary {
+  background: #ff0000;
+  border-color: #ff0000;
+  color: #fff;
+}
+.cb-btn-primary:hover:not(:disabled) { background: #cc0000; border-color: #cc0000; }
+
+.cb-btn-accent {
+  background: #1565c0;
+  border-color: #1565c0;
+  color: #fff;
+}
+.cb-btn-accent:hover:not(:disabled) { background: #0d47a1; border-color: #0d47a1; }
+
+.cb-btn-sm {
+  padding: 4px 10px;
+  font-size: 11px;
+}
+
+.hidden { display: none !important; }
+
+/* ── Sensitivity Slider ────────────────────── */
+.cb-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #777;
+}
+
+#cb-sensitivity {
+  flex: 1;
+  accent-color: #ff0000;
+  cursor: pointer;
+}
+
+/* ── Progress Bar ──────────────────────────── */
+#cb-progress-bar {
+  height: 3px;
+  background: #222;
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 8px 0 4px;
+}
+
+#cb-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff0000, #ff6b6b);
+  transition: width 0.3s;
+  border-radius: 2px;
+}
+
+/* ── Status ────────────────────────────────── */
+#cb-status {
+  font-size: 11px;
+  color: #888;
+  min-height: 16px;
+}
+
+/* ── Interval Select ───────────────────────── */
+#cb-interval {
+  background: #222;
+  border: 1px solid #333;
+  color: #bbb;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+/* ── Timestamps Section ────────────────────── */
+.cb-section-timestamps {
+  flex: 1;
+  min-height: 200px;
+  border-bottom: none;
+}
+
+.cb-ts-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cb-ts-actions {
+  display: flex;
+  gap: 4px;
+}
+
+#cb-ts-list {
+  max-height: 320px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #333 transparent;
+}
+
+.cb-empty {
+  text-align: center;
+  color: #555;
+  font-size: 12px;
+  padding: 20px 0;
+  line-height: 1.7;
+}
+
+.cb-ts-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 6px;
+  border-radius: 6px;
+  transition: background 0.1s;
+}
+.cb-ts-item:hover { background: #1a1a1a; }
+
+.cb-ts-num {
+  font-size: 10px;
+  color: #555;
+  width: 16px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.cb-ts-time {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #ff6b6b;
+  padding: 3px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: monospace;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.cb-ts-time:hover { background: #ff0000; border-color: #ff0000; color: #fff; }
+
+.cb-ts-score {
+  font-size: 9px;
+  color: #f9a825;
+  letter-spacing: 1px;
+  flex: 1;
+}
+
+.cb-ts-link {
+  color: #555;
+  text-decoration: none;
+  font-size: 12px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.cb-ts-link:hover { color: #aaa; background: #222; }

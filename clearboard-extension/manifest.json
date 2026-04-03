@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "ClearBoard – Lecture Note Helper",
+  "version": "1.0.0",
+  "description": "Automatically finds timestamps in YouTube lectures when the teacher is not blocking the board so you can take notes.",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/watch*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "ClearBoard"
+  },
+  "icons": {
+    "16":  "icon16.png",
+    "48":  "icon48.png",
+    "128": "icon128.png"
+  }
+}

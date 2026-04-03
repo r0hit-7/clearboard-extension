@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClearBoard</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 280px;
+      background: #0f0f0f;
+      color: #e0e0e0;
+      font-family: 'Roboto', Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    .header {
+      background: #1a1a1a;
+      padding: 16px;
+      border-bottom: 1px solid #2a2a2a;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .header-icon { font-size: 28px; }
+    .header h1 { font-size: 16px; font-weight: 700; color: #fff; }
+    .header p  { font-size: 11px; color: #888; margin-top: 2px; }
+
+    .body { padding: 16px; }
+
+    .step {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 14px;
+      align-items: flex-start;
+    }
+    .step-num {
+      background: #ff0000;
+      color: #fff;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .step-text strong { display: block; font-size: 12px; color: #ddd; margin-bottom: 2px; }
+    .step-text span   { font-size: 11px; color: #888; line-height: 1.5; }
+
+    .divider { border: none; border-top: 1px solid #222; margin: 14px 0; }
+
+    .open-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background: #ff0000;
+      border: none;
+      border-radius: 20px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .open-btn:hover { background: #cc0000; }
+
+    .note {
+      font-size: 10px;
+      color: #555;
+      text-align: center;
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    #status {
+      font-size: 11px;
+      color: #888;
+      text-align: center;
+      margin-top: 8px;
+      min-height: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-icon">🎓</div>
+    <div>
+      <h1>ClearBoard</h1>
+      <p>YouTube Lecture Note Helper</p>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <strong>Open a YouTube lecture</strong>
+        <span>Navigate to any YouTube video with a classroom or lecture recording.</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <strong>Click 🎓 on the page</strong>
+        <span>A sidebar will appear. Optionally capture a "clear board" reference frame.</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <strong>Start scanning</strong>
+        <span><b>Live Watch</b> – detects as you watch in real-time.<br>
+        <b>Fast Scan</b> – seeks through the whole video automatically.</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-text">
+        <strong>Click any timestamp</strong>
+        <span>Jump directly to moments when the board is clear to take notes!</span>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <button class="open-btn" id="open-yt">Open YouTube →</button>
+    <p id="status"></p>
+    <p class="note">Works on lecture videos where a person stands in front of a blackboard or whiteboard.</p>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
